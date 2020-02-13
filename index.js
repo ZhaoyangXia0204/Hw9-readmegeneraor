@@ -54,8 +54,9 @@ function init(){
         const installation = "## Installation" + '\n' + response.installation;
         const usage = "## Usage" + '\n' + response.usage;
         const test = "## Tests" + '\n' + response.test;
+        const license = "## Tests" + '\n' + response.License;
         const Questionss = "## Tests" + '\n' + response.Questionss;
-        fs.writeFile("ReadeMe.md", title+"\n"+description+"\n"+table+"\n"+installation+"\n"+usage+"\n"+test+"\n"+Questionss, function(err){
+        fs.writeFile("ReadeMe.md", title+"\n"+license+"\n"+description+"\n"+table+"\n"+installation+"\n"+usage+"\n"+test+"\n"+Questionss, function(err){
             if (err){
                 throw err
 
