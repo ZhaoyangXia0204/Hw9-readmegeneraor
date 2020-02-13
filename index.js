@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const axios = require('axios');
+//const axios = require('axios');
 const fs = require('fs');
 
 
@@ -35,28 +35,34 @@ const questions = [
         type: "input",
         message: "Contributing: ",
         name: "Contributing"
-    }, {
+    },//{
+    //     type:"checkbox",
+    //     choices:"![Alt Text](https://img.shields.io/github/languages/top/nielsenjared/badmath)",
+    //     name:"badges"
+    // },
+     {
         type: "input",
         message: "Tests: ",
         name: "Tests"
     }, {
         type: "input",
         message: "Questions: ",
-        name: "Quesionss"
+        name: "Questionss"
     }
 ]
 function init(){
     inquirer.prompt(questions)
     .then(function(response){
-        const title = "#" +response.title;
+        const title = "#" + response.title;
         const description = "## Description" + '\n' + response.description;
         const table = "## Table" + '\n';
         const installation = "## Installation" + '\n' + response.installation;
+        const Contributing = "## Contributing" + '\n' + response.Contributing;
         const usage = "## Usage" + '\n' + response.usage;
-        const test = "## Tests" + '\n' + response.test;
-        const license = "## Tests" + '\n' + response.License;
-        const Questionss = "## Tests" + '\n' + response.Questionss;
-        fs.writeFile("ReadeMe.md", title+"\n"+license+"\n"+description+"\n"+table+"\n"+installation+"\n"+usage+"\n"+test+"\n"+Questionss, function(err){
+        const test = "## Tests" + '\n' + response.Tests;
+        const license = "## License" + '\n' + response.License;
+        const Questionss = "## Questions" + '\n' + response.Questionss;
+        fs.writeFile("ReadeMe.md", title+"\n"+license+"\n"+description+"\n"+table+"\n"+Contributing+'\n'+installation+"\n"+usage+"\n"+test+"\n"+Questionss, function(err){
             if (err){
                 throw err
 
